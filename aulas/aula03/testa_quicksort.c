@@ -15,7 +15,7 @@ int main() {
     imprimir_vetor(vetor, TAMANHO);
 
     tempo_inicial = clock();
-    bubble_sort(vetor, TAMANHO);
+    quick_sort(vetor, 0, TAMANHO-1);
     tempo_final = clock();
 
     printf("Vetor depois de ordenar:\n");
@@ -30,5 +30,5 @@ int main() {
 // Copilar TUDO: gcc *.c -lm -o a.out
 // Executar: ./a.out
 
-// Copilar: gcc ordenacao.c testa_bubblesort.c -o testa_bubblesort.out
-// Executar: ./testa_bubblesort.out
+// Copilar: gcc ordenacao.c testa_quicksort.c -o testa_quicksort.out
+// Executar: ./testa_quicksort.out
