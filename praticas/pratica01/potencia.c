@@ -1,29 +1,23 @@
 #include <stdio.h>
-int potencia(int base , int expoente){
-    if(expoente == 0 ){
-        return 1;
-    };
-    if(base == 0){
-    return 0;
-    };
-    int resultado = 1;
-    for(int i = 0; i < expoente; i++){
-        resultado = resultado*base;
+
+
+int main() {
+    float num, resultado = 1;
+    int potencia;
+
+    // Valores de teste1
+    num = 2; potencia = 3; resultado = 1;
+    for (int i = 0; i < potencia; i++) {
+        resultado *= num;
     }
-    return resultado;
-}
+    printf("1 Teste: %.2f\n", resultado);
 
-int main(){
-    int base , expoente;
-
-    printf("Digite a base (inteiro): ");
-    scanf("%d", &base);
+    // Valores de teste2
+    num = 7; potencia = 6; resultado = 1;
+    for (int i = 0; i < potencia; i++) {
+        resultado *= num;
+    }
+    printf("2 Teste: %.2f\n", resultado);
     
-    printf("Digite o expoente (inteiro positivo): ");
-    scanf("%d", &expoente);
-
-    int res = potencia(base, expoente);
-        printf("Resultado: %d\n", res);
-
     return 0;
 }

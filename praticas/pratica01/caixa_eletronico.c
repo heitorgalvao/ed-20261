@@ -1,36 +1,53 @@
 #include <stdio.h>
-#include <string.h>
 
-struct Cedulas{
-    int notas;
-    int quantidade;
-};
+float saque(float valor) {
+    if (valor > 1000.0) {
+        printf("Erro: Valor de saque excedido!");
+        return -1;
+    }
+    int resto = valor; // Caso o valor seja impar
 
-int main(){
-    int saque;
-    struct Cedulas caixa[7] ={
-    {200, 0}, {100, 0}, {50, 0}, {20, 0}, {10, 0}, {5, 0}, {2,0} 
-    };
-    printf("Digite o valor do saque (Máx R$ 1000): ");
-    scanf("%d", &saque);
+    int n200 = resto / 200;
+    resto %= 200;
 
-    if (saque <= 0 || saque > 1000) {
-        printf("Valor inválido!\n");
-        return 0;
+    int n100 = resto / 100;
+    resto %= 100;
+
+    int n50 = resto / 50;
+    resto %= 50;
+
+    int n20 = resto / 20;
+    resto %= 20;
+
+    int n10 = resto / 10;
+    resto %= 10;
+
+    int n5 = resto / 5;
+    resto %= 5;
+
+    int n2 = resto / 2;
+    resto %= 2;
+
+    printf("Valor do saque: %d\n", valor);
+    printf("Notas de 200: %d\n", n200);
+    printf("Notas de 100: %d\n", n100);
+    printf("Notas de 50: %d\n", n50);
+    printf("Notas de 20: %d\n", n20);
+    printf("Notas de 10: %d\n", n10);
+    printf("Notas de 5: %d\n", n5);
+    printf("Notas de 2: %d\n", n2);
+
+    if (resto == 0) {
+        printf("Valor restante não pode ser sacado!\n");
     }
-    int restante = saque; 
-    for (int i = 0; i < 7; i++) {
-        caixa[i].quantidade = restante / caixa[i].notas;
-        restante = restante % caixa[i].notas;
+    else {
+        printf("Valor restante a ser sacado: %d\n", resto);
     }
-    printf("\nNotas entregues para R$ %d:\n", saque);
-    for (int i = 0; i < 7; i++) {
-        if (caixa[i].quantidade > 0) {
-            printf("%d nota(s) de R$ %d\n", caixa[i].quantidade, caixa[i].notas);
-        }
-    }
-    if (restante > 0) {
-        printf("Atenção: Sobrou R$ %d que não pode ser sacado com estas notas.\n", restante);
-    }
+
+}
+int main()
+{
+    saque(230);
+
     return 0;
 }
