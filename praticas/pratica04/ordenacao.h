@@ -9,4 +9,3 @@ void bubble_sort(int v[], int n);
 void imprimir_vetor(int v[], int n);
 
 #endif
-
