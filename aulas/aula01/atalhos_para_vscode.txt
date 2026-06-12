@@ -1,0 +1,17 @@
+shift + alt seta para cima ou para baixo (copia a linha de codigo e replica em baixo).
+
+alt seta para cima ou para baixo (movimenta a linha de codigo para cima ou para baixo).
+
+alt clique do botão esquerdo do mouse (permite escrever a mesma coisa em multiplas linhas).
+
+ctrl + D(permite ver as ocorrências).
+
+ctrl +shift + L (permite seleciona e permite fazer as alterações de todas as ocorrências simultaneamente).
+
+ctrl + F (buscar).
+
+ctrl + espaço (abre o auto complete).
+
+shift + alt + F (formata o código).
+
+ctrl + K depois ctrl + S (abre a lista de atalhos).
